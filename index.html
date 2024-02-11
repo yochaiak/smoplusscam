@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Concerns regarding smo.plus services">
+    <meta name="keywords" content="smo.plus, scam, fraudulent practices, social media scams, online fraud, digital marketing scams, unethical practices, social media promotion, online services, Telegram boost, fake likes, customer dissatisfaction">
+    <meta name="author" content="Your Name">
+
+    <!-- Add your own title -->
+    <title>Concerns Regarding smo.plus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" type="text/css" />
+
+    <!-- Add your own stylesheet link -->
+    <style>
+        body {
+            background: #f4f4f4;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+    <!-- Add your own scripts or links to external scripts if necessary -->
+    <!-- <script src="script.js"></script> -->
+</head>
+<body>
+
+    <header>
+        <h1>Concerns Regarding smo.plus</h1>
+    </header>
+
+    <section>
+        <p>I registered with smo.plus and purchased three services, including likes for my Telegram post and boosts for my Telegram channels. Unfortunately, within three days, they canceled my order, attributing it to incorrect links. I promptly rectified the links, and despite the promised 24-hour processing time, over 72 hours passed without any service. The customer support responses were consistently vague, offering apologies and delays. Despite my urgent requests and promises to customers, the boosts did not start as expected. The frustration continued with broken promises, slow processing, and incomplete services. This experience has left me dissatisfied and questioning the reliability of smo.plus.</p>
+
+        <!-- Add your own contact form or information below -->
+            <p>If you have a similar experience or need more information, feel free to contact me:</p>
+            <div id="form-status"></div>
+            <form id="form" action="https://formspree.io/f/xayrowog" method="post" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+    </section>
+    <script>
+        var form = document.getElementById("form");
+        
+        async function handleSubmit(event) {
+          event.preventDefault();
+          var status = document.getElementById("form-status");
+          var data = new FormData(event.target);
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              status.innerHTML = "Thanks for your submission!";
+              form.reset()
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                  status.innerHTML = "Oops! There was a problem submitting your form"
+                }
+              })
+            }
+          }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+          });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
+
+</body>
+</html>
